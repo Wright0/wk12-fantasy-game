@@ -2,7 +2,11 @@ package Items.Weapons;
 
 public class Sword extends Weapon {
 
-    public Sword(String name, int attackPower) {
+    private int handsNeededToWield;
+
+    public Sword(String name, int attackPower, int handsNeededToWield) {
         super(name, attackPower);
+        this.handsNeededToWield = handsNeededToWield;
     }
+
 }

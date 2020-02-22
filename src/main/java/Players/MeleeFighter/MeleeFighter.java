@@ -1,10 +1,11 @@
 package Players.MeleeFighter;
 
+import Behaviours.IAttack;
 import Items.Weapons.Weapon;
 import Players.Player;
 
-public abstract class MeleeFighter extends Player {
-    private Weapon weapon;
+public abstract class MeleeFighter extends Player implements IAttack {
+    protected Weapon weapon;
 
     public MeleeFighter(String name, int healthPoints) {
         super(name, healthPoints);

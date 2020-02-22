@@ -44,7 +44,7 @@ public class ClericTest {
     }
 
     @Test
-    public void clericCanAddTreasure(){
+    public void clericCanAddTreasureAndGetWalletValue(){
         bob.addTreasure(gold);
         assertEquals(10, bob.getWalletValue());
     }

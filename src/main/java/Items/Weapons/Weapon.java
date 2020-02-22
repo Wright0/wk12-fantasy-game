@@ -13,4 +13,5 @@ public abstract class Weapon extends Item {
     public int getAttackPower() {
         return this.attackPower;
     }
+
 }

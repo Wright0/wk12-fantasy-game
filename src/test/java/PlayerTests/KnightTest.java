@@ -1,5 +1,6 @@
 package PlayerTests;
 
+import Items.Weapons.Club;
 import Items.Weapons.Sword;
 import Players.Healer.Cleric;
 import Players.MeleeFighter.Knight;
@@ -12,18 +13,27 @@ public class KnightTest {
     Knight knight;
     Sword sword;
     Cleric cleric;
+    Club club;
 
     @Before
     public void before(){
-        knight = new Knight("Dave", 10);
-        sword = new Sword("Steve", 5);
-        cleric = new Cleric("Fred", 10);
+        knight = new Knight("Dave", 50);
+        cleric = new Cleric("Fred", 50);
+        sword = new Sword("Long sword", 10, 2);
+        club = new Club("Club", 8);
     }
 
     @Test
-    public void canAttackEnemy(){
+    public void canAttackEnemyWithPreferredWeapon(){
         knight.receiveNewWeapon(sword);
         knight.attack(cleric);
-        assertEquals(5, cleric.getHealthPoints());
+        assertEquals(35, cleric.getHealthPoints());
+    }
+
+    @Test
+    public void canAttackEnemyWithNonPreferredWeapon(){
+        knight.receiveNewWeapon(club);
+        knight.attack(cleric);
+        assertEquals(42, cleric.getHealthPoints());
     }
 }
