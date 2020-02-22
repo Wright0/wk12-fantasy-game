@@ -1,7 +1,6 @@
 package BattleTest;
 
 import Actions.Battle;
-import Behaviours.IAttack;
 import Characters.Healer.Cleric;
 import Characters.MeleeFighter.Knight;
 import Characters.Character;
@@ -27,7 +26,7 @@ public class BattleTest {
     private Weapon club;
 
     ArrayList<Character> characters;
-    ArrayList<IAttack> enemies;
+    ArrayList<Character> enemies;
 
     @Before
     public void before(){
@@ -48,7 +47,7 @@ public class BattleTest {
         characters.add(rey);
         characters.add(c3p0);
 
-        enemies = new ArrayList<IAttack>();
+        enemies = new ArrayList<Character>();
         enemies.add(anakin);
         enemies.add(kylo);
     }
@@ -61,6 +60,9 @@ public class BattleTest {
         assertEquals(1, battle.getKOCharactersCount());
         assertEquals(1, battle.getKOEnemiesCount());
     }
+
+    @Test
+    public void
 
 }
 

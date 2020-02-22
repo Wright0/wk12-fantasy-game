@@ -19,6 +19,5 @@ public abstract class Healer extends Character {
         return this.healingitem;
     }
 
-    public abstract void healPlayer(Character character);
 
 }

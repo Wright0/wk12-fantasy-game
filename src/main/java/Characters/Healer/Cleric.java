@@ -8,7 +8,7 @@ public class Cleric extends Healer {
         super(name, healthPoints);
     }
 
-    public void healPlayer(Character character){
+    public void battleAction(Character character){
         character.beHealed(getHealingItem().getHealingPower());
     }
 }

@@ -39,7 +39,7 @@ public class ClericTest {
     public void clericCanHealAnotherPlayer(){
         bob.receiveNewHealingItem(potion);
         jeff.takeHealthDamage(6);
-        bob.healPlayer(jeff);
+        bob.battleAction(jeff);
         assertEquals(9, jeff.getHealthPoints());
     }
 

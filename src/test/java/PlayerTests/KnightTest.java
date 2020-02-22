@@ -26,14 +26,14 @@ public class KnightTest {
     @Test
     public void canAttackEnemyWithPreferredWeapon(){
         knight.receiveNewWeapon(sword);
-        knight.attack(cleric);
+        knight.battleAction(cleric);
         assertEquals(35, cleric.getHealthPoints());
     }
 
     @Test
     public void canAttackEnemyWithNonPreferredWeapon(){
         knight.receiveNewWeapon(club);
-        knight.attack(cleric);
+        knight.battleAction(cleric);
         assertEquals(42, cleric.getHealthPoints());
     }
 }

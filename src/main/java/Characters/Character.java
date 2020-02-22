@@ -44,4 +44,6 @@ public abstract class Character {
         this.wallet.add(treasure);
     }
 
+    public abstract void battleAction(Character character);
+
 }

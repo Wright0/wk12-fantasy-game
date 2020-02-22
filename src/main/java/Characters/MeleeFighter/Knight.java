@@ -16,13 +16,13 @@ public class Knight extends MeleeFighter {
     }
 
     @Override
-    public void attack(Character character){
+    public void battleAction(Character character){
         if (this.weapon.getName().equals(preferredWeapon)){
             int attackMultiplierValue = 0;
             attackMultiplierValue = (this.weapon.getAttackPower() * preferredWeaponMultiplier) / 100;
             character.takeHealthDamage(this.weapon.getAttackPower() + attackMultiplierValue);
         } else {
-        super.attack(character);
+        super.battleAction(character);
         }
     }
 
