@@ -2,8 +2,8 @@ package PlayerTests;
 
 import Items.Weapons.Club;
 import Items.Weapons.Sword;
-import Players.Healer.Cleric;
-import Players.MeleeFighter.Knight;
+import Characters.Healer.Cleric;
+import Characters.MeleeFighter.Knight;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +17,7 @@ public class KnightTest {
 
     @Before
     public void before(){
-        knight = new Knight("Dave", 50);
+        knight = new Knight("Dave", 50, "Elric");
         cleric = new Cleric("Fred", 50);
         sword = new Sword("Long sword", 10, 2);
         club = new Club("Club", 8);

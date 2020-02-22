@@ -1,8 +1,8 @@
-package Players.MeleeFighter;
+package Characters.MeleeFighter;
 
 import Behaviours.IAttack;
 import Items.Weapons.Weapon;
-import Players.Character;
+import Characters.Character;
 
 public abstract class MeleeFighter extends Character implements IAttack {
     protected Weapon weapon;

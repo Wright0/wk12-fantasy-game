@@ -2,7 +2,7 @@ package PlayerTests;
 
 import Items.HealingItems.HealingItem;
 import Items.Treasure;
-import Players.Healer.Cleric;
+import Characters.Healer.Cleric;
 import org.junit.Before;
 import org.junit.Test;
 

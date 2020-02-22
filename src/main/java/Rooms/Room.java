@@ -1,26 +1,26 @@
 package Rooms;
 
 import Items.Treasure;
-import Players.Player;
+import Characters.Character;
 
 import java.util.ArrayList;
 
 public class Room {
 
     private ArrayList<Treasure> treasures;
-    private ArrayList<Player> players;
+    private ArrayList<Character> characters;
 
     public Room(ArrayList<Treasure> treasures) {
         this.treasures = treasures;
-        this.players = new ArrayList<Player>();
+        this.characters = new ArrayList<Character>();
     }
 
-    public void addPlayer(Player player){
-        this.players.add(player);
+    public void addPlayer(Character character){
+        this.characters.add(character);
     }
 
     public int getPlayerCount() {
-        return this.players.size();
+        return this.characters.size();
     }
 
     public ArrayList<Treasure> giveTreasure() {

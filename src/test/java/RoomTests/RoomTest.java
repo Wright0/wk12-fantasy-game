@@ -1,8 +1,8 @@
 package RoomTests;
 
 import Items.Treasure;
-import Players.Healer.Cleric;
-import Players.Player;
+import Characters.Healer.Cleric;
+import Characters.Character;
 import Rooms.Room;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 public class RoomTest {
     Room room;
-    Player bob;
+    Character bob;
     Treasure treasure;
     ArrayList<Treasure> treasures;
 

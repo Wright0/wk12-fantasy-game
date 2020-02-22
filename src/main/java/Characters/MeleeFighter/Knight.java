@@ -1,6 +1,6 @@
-package Players.MeleeFighter;
+package Characters.MeleeFighter;
 
-import Players.Character;
+import Characters.Character;
 
 public class Knight extends MeleeFighter {
 

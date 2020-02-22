@@ -1,6 +1,6 @@
-package Players.Healer;
+package Characters.Healer;
 import Items.HealingItems.HealingItem;
-import Players.Character;
+import Characters.Character;
 
 public abstract class Healer extends Character {
 

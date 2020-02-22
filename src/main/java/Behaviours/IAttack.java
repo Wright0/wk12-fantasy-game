@@ -1,8 +1,11 @@
 package Behaviours;
 
-import Players.Player;
+import Characters.Character;
 
 public interface IAttack {
 
-    void attack(Player player);
+    void attack(Character character);
+    int getHealthPoints();
+    void takeHealthDamage(int amountToRemove);
+
 }

@@ -1,6 +1,6 @@
-package Players.Healer;
+package Characters.Healer;
 
-import Players.Character;
+import Characters.Character;
 
 public class Cleric extends Healer {
 

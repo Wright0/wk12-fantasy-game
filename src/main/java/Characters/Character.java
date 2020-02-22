@@ -1,4 +1,4 @@
-package Players;
+package Characters;
 
 import Items.Treasure;
 
