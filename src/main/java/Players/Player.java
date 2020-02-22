@@ -1,6 +1,5 @@
 package Players;
 
-import Items.Item;
 import Items.Treasure;
 
 import java.util.ArrayList;
@@ -8,10 +7,10 @@ import java.util.ArrayList;
 public abstract class Player {
 
     private String name;
-    private double healthPoints;
+    private int healthPoints;
     private ArrayList<Treasure> wallet;
 
-    public Player(String name, double healthPoints) {
+    public Player(String name, int healthPoints) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.wallet = new ArrayList<Treasure>();
@@ -21,7 +20,7 @@ public abstract class Player {
         return this.name;
     }
 
-    public double getHealthPoints() {
+    public int getHealthPoints() {
         return this.healthPoints;
     }
 
@@ -33,11 +32,11 @@ public abstract class Player {
         return walletValue;
     }
 
-    public void takeHealthDamage(double amountToRemove){
+    public void takeHealthDamage(int amountToRemove){
         this.healthPoints -= amountToRemove;
     }
 
-    public void beHealed(double amountToAdd){
+    public void beHealed(int amountToAdd){
         this.healthPoints += amountToAdd;
     }
 

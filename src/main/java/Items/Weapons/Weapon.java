@@ -3,14 +3,14 @@ package Items.Weapons;
 import Items.Item;
 
 public abstract class Weapon extends Item {
-    private double attackPower;
+    private int attackPower;
 
-    public Weapon(String name, double attackPower) {
+    public Weapon(String name, int attackPower) {
         super(name);
         this.attackPower = attackPower;
     }
 
-    public double getAttackPower() {
+    public int getAttackPower() {
         return this.attackPower;
     }
 }

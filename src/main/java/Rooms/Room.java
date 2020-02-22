@@ -29,7 +29,6 @@ public class Room {
         return treasuresCopy;
     }
 
-
     public int getTreasureCount() {
         return this.treasures.size();
     }

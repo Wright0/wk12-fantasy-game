@@ -1,14 +1,12 @@
 package Players.MeleeFighter;
 
-import Items.HealingItems.HealingItem;
 import Items.Weapons.Weapon;
-import Players.Healer.Cleric;
 import Players.Player;
 
 public abstract class MeleeFighter extends Player {
     private Weapon weapon;
 
-    public MeleeFighter(String name, double healthPoints) {
+    public MeleeFighter(String name, int healthPoints) {
         super(name, healthPoints);
         weapon = null;
     }

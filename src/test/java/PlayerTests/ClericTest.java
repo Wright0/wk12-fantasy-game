@@ -17,8 +17,8 @@ public class ClericTest {
 
     @Before
     public void before(){
-        jeff = new Cleric("Jeff", 10.00);
-        bob = new Cleric("Bob", 20.00);
+        jeff = new Cleric("Jeff", 10);
+        bob = new Cleric("Bob", 20);
         potion = new HealingItem("Potion", 5);
         gold = new Treasure("Gold", 10);
     }
@@ -31,16 +31,16 @@ public class ClericTest {
 
     @Test
     public void canTakeDamage(){
-        jeff.takeHealthDamage(6.0);
-        assertEquals(4.0, jeff.getHealthPoints(), 0.01);
+        jeff.takeHealthDamage(6);
+        assertEquals(4, jeff.getHealthPoints());
     }
 
     @Test
     public void clericCanHealAnotherPlayer(){
         bob.receiveNewHealingItem(potion);
-        jeff.takeHealthDamage(6.0);
+        jeff.takeHealthDamage(6);
         bob.healPlayer(jeff);
-        assertEquals(9.0, jeff.getHealthPoints(), 0.01);
+        assertEquals(9, jeff.getHealthPoints());
     }
 
     @Test

@@ -4,14 +4,14 @@ import Items.Item;
 
 public class HealingItem extends Item {
 
-    private double healingPower;
+    private int healingPower;
 
-    public HealingItem(String name, double healingPower) {
+    public HealingItem(String name, int healingPower) {
         super(name);
         this.healingPower = healingPower;
     }
 
-    public double getHealingPower() {
+    public int getHealingPower() {
         return healingPower;
     }
 }

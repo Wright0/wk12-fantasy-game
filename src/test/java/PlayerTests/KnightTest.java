@@ -1,7 +1,6 @@
 package PlayerTests;
 
 import Items.Weapons.Sword;
-import Items.Weapons.Weapon;
 import Players.Healer.Cleric;
 import Players.MeleeFighter.Knight;
 import org.junit.Before;
@@ -17,7 +16,7 @@ public class KnightTest {
     @Before
     public void before(){
         knight = new Knight("Dave", 10);
-        sword = new Sword("Steve", 5.00);
+        sword = new Sword("Steve", 5);
         cleric = new Cleric("Fred", 10);
     }
 
@@ -25,6 +24,6 @@ public class KnightTest {
     public void canAttackEnemy(){
         knight.receiveNewWeapon(sword);
         knight.attack(cleric);
-        assertEquals(5, cleric.getHealthPoints(), 0.01);
+        assertEquals(5, cleric.getHealthPoints());
     }
 }
