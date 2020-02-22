@@ -1,6 +1,6 @@
 package Players.Healer;
 
-import Players.Player;
+import Players.Character;
 
 public class Cleric extends Healer {
 
@@ -8,7 +8,7 @@ public class Cleric extends Healer {
         super(name, healthPoints);
     }
 
-    public void healPlayer(Player player){
-        player.beHealed(getHealingItem().getHealingPower());
+    public void healPlayer(Character character){
+        character.beHealed(getHealingItem().getHealingPower());
     }
 }

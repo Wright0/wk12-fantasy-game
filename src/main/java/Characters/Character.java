@@ -4,13 +4,13 @@ import Items.Treasure;
 
 import java.util.ArrayList;
 
-public abstract class Player {
+public abstract class Character {
 
     private String name;
     private int healthPoints;
     private ArrayList<Treasure> wallet;
 
-    public Player(String name, int healthPoints) {
+    public Character(String name, int healthPoints) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.wallet = new ArrayList<Treasure>();

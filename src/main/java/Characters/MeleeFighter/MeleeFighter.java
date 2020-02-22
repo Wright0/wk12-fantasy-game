@@ -2,9 +2,9 @@ package Players.MeleeFighter;
 
 import Behaviours.IAttack;
 import Items.Weapons.Weapon;
-import Players.Player;
+import Players.Character;
 
-public abstract class MeleeFighter extends Player implements IAttack {
+public abstract class MeleeFighter extends Character implements IAttack {
     protected Weapon weapon;
 
     public MeleeFighter(String name, int healthPoints) {
@@ -20,7 +20,7 @@ public abstract class MeleeFighter extends Player implements IAttack {
         return this.weapon;
     }
 
-    public void attack(Player player){
-        player.takeHealthDamage(this.weapon.getAttackPower());
+    public void attack(Character character){
+        character.takeHealthDamage(this.weapon.getAttackPower());
     }
 }

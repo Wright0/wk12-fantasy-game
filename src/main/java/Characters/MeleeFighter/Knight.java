@@ -1,26 +1,28 @@
 package Players.MeleeFighter;
 
-import Players.Player;
+import Players.Character;
 
 public class Knight extends MeleeFighter {
 
     private String preferredWeapon;
     private int preferredWeaponMultiplier;
+    private String knightsOrder;
 
-    public Knight(String name, int healthPoints) {
+    public Knight(String name, int healthPoints, String knightsOrder) {
         super(name, healthPoints);
         this.preferredWeapon = "Long sword";
         this.preferredWeaponMultiplier = 50;
+        this.knightsOrder = knightsOrder;
     }
 
     @Override
-    public void attack(Player player){
+    public void attack(Character character){
         if (this.weapon.getName().equals(preferredWeapon)){
             int attackMultiplierValue = 0;
             attackMultiplierValue = (this.weapon.getAttackPower() * preferredWeaponMultiplier) / 100;
-            player.takeHealthDamage(this.weapon.getAttackPower() + attackMultiplierValue);
+            character.takeHealthDamage(this.weapon.getAttackPower() + attackMultiplierValue);
         } else {
-        super.attack(player);
+        super.attack(character);
         }
     }
 

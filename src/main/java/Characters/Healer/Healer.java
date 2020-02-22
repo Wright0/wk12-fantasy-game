@@ -1,8 +1,8 @@
 package Players.Healer;
 import Items.HealingItems.HealingItem;
-import Players.Player;
+import Players.Character;
 
-public abstract class Healer extends Player {
+public abstract class Healer extends Character {
 
     private HealingItem healingitem;
 
@@ -19,6 +19,6 @@ public abstract class Healer extends Player {
         return this.healingitem;
     }
 
-    public abstract void healPlayer(Player player);
+    public abstract void healPlayer(Character character);
 
 }
