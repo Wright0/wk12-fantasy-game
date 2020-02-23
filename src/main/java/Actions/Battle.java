@@ -8,29 +8,41 @@ public class Battle {
 
     private ArrayList<Character> healthyCharacters;
     private ArrayList<Character> kOCharacters;
+
     private ArrayList<Character> healthyEnemies;
     private ArrayList<Character> kOEnemies;
 
     public Battle() {
         this.healthyCharacters = new ArrayList<Character>();
         this.kOCharacters = new ArrayList<Character>();
+
         this.healthyEnemies = new ArrayList<Character>();
         this.kOEnemies = new ArrayList<Character>();
     }
 
-    public int getHealthyCharactersCount(){
+    public int getHealthyCharacterCount(){
         return this.healthyCharacters.size();
     }
 
-    public int getKOCharactersCount(){
+    public ArrayList<Character> getHealthyCharacters(){
+        ArrayList<Character> healthyCharactersCopy = healthyCharacters;
+        return healthyCharactersCopy;
+    }
+
+    public int getKOCharacterCount(){
         return this.kOCharacters.size();
     }
 
-    public int getHealthyEnemiesCount(){
+    public int getHealthyEnemyCount(){
         return this.healthyEnemies.size();
     }
 
-    public int getKOEnemiesCount(){
+    public ArrayList<Character> getHealthyEnemies(){
+        ArrayList<Character> healthyEnemiesCopy = healthyEnemies;
+        return healthyEnemiesCopy;
+    }
+
+    public int getKOEnemyCount(){
         return this.kOEnemies.size();
     }
 
@@ -52,15 +64,40 @@ public class Battle {
         }
     }
 
-    public void battleRound(){
-        for (Character character : this.healthyCharacters){
-            character.battleAction();
+    public void updateBattleGroups(){
+        ArrayList<Character> newlyDeadCharacters = new ArrayList<Character>();
+        for (Character character: this.healthyCharacters){
+            if (character.getHealthPoints() <= 0){
+                this.kOCharacters.add(character);
+                newlyDeadCharacters.add(character);
+            }
         }
+        this.healthyCharacters.removeAll(newlyDeadCharacters);
+
+        ArrayList<Character> newlyDeadEnemies= new ArrayList<Character>();
+        for (Character enemy: this.healthyEnemies){
+            if (enemy.getHealthPoints() <= 0){
+                this.kOEnemies.add(enemy);
+                newlyDeadEnemies.add(enemy);
+            }
+        }
+        this.healthyEnemies.removeAll(newlyDeadEnemies);
     }
 
-//    public void battleUntilWinner(){
-//        while (this.getHealthyCharactersCount() > 0 && this.getKOCharactersCount() > 0){
-//            this.battleRound();
-//        }
-//    }
+    public int battleRound(Character selectedCharacter, String action, Character target){
+        int battleActionValue = selectedCharacter.battleAction(action, target);
+        return battleActionValue;
+    }
+
+    public boolean canBattleContinue(){
+        return this.getHealthyCharacterCount() > 0 && this.getHealthyEnemyCount() > 0;
+    }
+
+    public String determineWinner(){
+        if (this.getHealthyEnemyCount() == 0){
+            return "You";
+        } else {
+            return "The enemy";
+        }
+    }
 }

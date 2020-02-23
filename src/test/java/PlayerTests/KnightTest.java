@@ -17,7 +17,7 @@ public class KnightTest {
 
     @Before
     public void before(){
-        knight = new Knight("Dave", 50, "Elric");
+        knight = new Knight("Dave", 50,"Elric");
         cleric = new Cleric("Fred", 50);
         sword = new Sword("Long sword", 10, 2);
         club = new Club("Club", 8);
@@ -26,14 +26,14 @@ public class KnightTest {
     @Test
     public void canAttackEnemyWithPreferredWeapon(){
         knight.receiveNewWeapon(sword);
-        knight.battleAction(cleric);
+        knight.battleAction("attack", cleric);
         assertEquals(35, cleric.getHealthPoints());
     }
 
     @Test
     public void canAttackEnemyWithNonPreferredWeapon(){
         knight.receiveNewWeapon(club);
-        knight.battleAction(cleric);
+        knight.battleAction("attack", cleric);
         assertEquals(42, cleric.getHealthPoints());
     }
 }

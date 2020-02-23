@@ -8,19 +8,21 @@ import java.util.ArrayList;
 public class Room {
 
     private ArrayList<Treasure> treasures;
-    private ArrayList<Character> characters;
+    private ArrayList<Character> playerParty;
+    private ArrayList<Character> enemies;
 
     public Room(ArrayList<Treasure> treasures) {
         this.treasures = treasures;
-        this.characters = new ArrayList<Character>();
+        this.playerParty = new ArrayList<Character>();
+        this.enemies = new ArrayList<Character>();
     }
 
     public void addPlayer(Character character){
-        this.characters.add(character);
+        this.playerParty.add(character);
     }
 
     public int getPlayerCount() {
-        return this.characters.size();
+        return this.playerParty.size();
     }
 
     public ArrayList<Treasure> giveTreasure() {

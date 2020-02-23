@@ -9,11 +9,13 @@ public abstract class Character {
     private String name;
     private int healthPoints;
     private ArrayList<Treasure> wallet;
+    protected String battleOption;
 
     public Character(String name, int healthPoints) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.wallet = new ArrayList<Treasure>();
+        this.battleOption = null;
     }
 
     public String getName(){
@@ -44,6 +46,10 @@ public abstract class Character {
         this.wallet.add(treasure);
     }
 
-    public abstract void battleAction(Character character);
+    public abstract int battleAction(String action, Character target);
+
+    public String getBattleOption(){
+        return this.battleOption;
+    };
 
 }

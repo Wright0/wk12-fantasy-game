@@ -37,7 +37,7 @@ public class BattleTest {
         anakin = new Knight("Anakin", 0, "Sith");
         kylo = new Knight ("Kylo", 35, "Sith");
 
-        sword = new Sword("Sword", 15, 2);
+        sword = new Sword("Long sword", 15, 2);
         club = new Club("Club", 10);
 
         kylo.receiveNewWeapon(club);
@@ -55,14 +55,27 @@ public class BattleTest {
     @Test
     public void canAddCharactersToCorrectListBasedOnHealth(){
         battle.initializeBattle(characters, enemies);
-        assertEquals(1, battle.getHealthyCharactersCount());
-        assertEquals(1, battle.getHealthyEnemiesCount());
-        assertEquals(1, battle.getKOCharactersCount());
-        assertEquals(1, battle.getKOEnemiesCount());
+        assertEquals(1, battle.getHealthyCharacterCount());
+        assertEquals(1, battle.getHealthyEnemyCount());
+        assertEquals(1, battle.getKOCharacterCount());
+        assertEquals(1, battle.getKOEnemyCount());
     }
 
-    @Test
-    public void
+//    @Test
+//    public void charactersCanAttackFirstEnemyInArray(){
+//        battle.initializeBattle(characters, enemies);
+//        battle.battleRound("attack", kylo);
+//        assertEquals(13, kylo.getHealthPoints());
+//    }
+
+//    @Test
+//    public void charactersCanAttackFirstEnemyInArray(){
+//        battle.initializeBattle(characters, enemies);
+//        battle.battleRound("attack", kylo);
+//        assertEquals(13, kylo.getHealthPoints());
+//    }
+
+
 
 }
 
